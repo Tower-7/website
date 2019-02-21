@@ -30,7 +30,6 @@ def configNginx():
     if os.system('/etc/nginx/nginx'):
         os.system('rm -rf /etc/nginx/nginx')
     os.system('cd /etc/nginx/ && git clone https://github.com/Tower-7/nginx.git')
-    os.system('mv -f /etc/nginx/nginx/ /etc/nginx/')
-    os.system('nginx -s stop')
-    os.system('nginx')
+    os.system('mv -f /etc/nginx/nginx/* /etc/nginx/')
+    os.system('nginx -s reload')
 configNginx()
